@@ -1,15 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import store from "./app/store";
 import App from "./App";
+import AddStudentForm from "./pages/AddStudentForm";
+import ClassesPage from "./pages/ClassesPage";
+import SchoolPage from "./pages/SchoolPage";
+import StudentDetails from "./pages/StudentDetails";
 import reportWebVitals from "./reportWebVitals";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/addStudent",
+    element: <AddStudentForm />,
+  },
+  {
+    path: "/student/:studentId",
+    element: <StudentDetails />,
+  },
+  {
+    path: "/classes",
+    element: <ClassesPage />,
+  },
+  {
+    path: "/school",
+    element: <SchoolPage />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );

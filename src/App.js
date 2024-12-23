@@ -1,15 +1,21 @@
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../src/features/counterSlice";
+import StudentView from "./features/students/StudentView";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import Header from "./components/Header";
+import { Link } from "react-router-dom";
 
 function App() {
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
   return (
-    <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-    </div>
+    <>
+      <Header />
+      <main className="container py-4">
+        <h1>Student View</h1>
+        <Link className="btn btn-warning my-3 fs-5" to="/addStudent">
+          Add Student
+        </Link>
+        <StudentView />
+      </main>
+    </>
   );
 }
 
