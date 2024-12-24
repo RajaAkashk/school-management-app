@@ -10,10 +10,12 @@ export const schoolSlice = createSlice({
   },
   reducers: {
     updateSchoolStats: (state, action) => {
-      const { totalStudents, averageAttendance, averageMarks } = action.payload;
+      const { totalStudents, averageAttendance, averageMarks, topStudent } =
+        action.payload;
       state.totalStudents = totalStudents;
       state.averageAttendance = averageAttendance;
       state.averageMarks = averageMarks;
+      state.topStudent = topStudent;
     },
 
     setTopStudent: (state, action) => {
