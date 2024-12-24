@@ -34,7 +34,7 @@ function StudentDetails() {
     <>
       <Header />
       <main className="container py-5">
-        <h1 className="mb-3">Student Detail</h1>
+        <h1 className="mb-3">Student Details</h1>
         {status === "loading" && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
         {status === "Successfully Deleted" && (

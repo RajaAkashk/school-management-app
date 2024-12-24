@@ -70,7 +70,7 @@ function TeacherDetails() {
                 </p>
                 <p key={data.id} className="fs-5">
                   <strong>Experience: </strong>
-                  {data.yearsOfExperience}
+                  {data.yearsOfExperience}yrs
                 </p>
 
                 <div key={data.id}>
