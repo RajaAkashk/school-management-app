@@ -8,6 +8,9 @@ import AddStudentForm from "./pages/AddStudentForm";
 import ClassesPage from "./pages/ClassesPage";
 import SchoolPage from "./pages/SchoolPage";
 import StudentDetails from "./pages/StudentDetails";
+import TeacherPage from "./pages/TeacherPage";
+import TeacherDetails from "./pages/TeacherDetails";
+import AddTeacherForm from "./pages/AddTeacherForm";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
   {
     path: "/school",
     element: <SchoolPage />,
+  },
+  {
+    path: "/teacher",
+    element: <TeacherPage />,
+  },
+  {
+    path: "/teacher/:teacherId",
+    element: <TeacherDetails />,
+  },
+  {
+    path: "/addTeacher",
+    element: <AddTeacherForm />,
   },
 ]);
 
